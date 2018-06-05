@@ -1,0 +1,25 @@
+{
+  "name": "search_client",
+  "version": "0.1.0",
+  "private": true,
+  "scripts": {
+    "start": "PORT=3010 react-scripts start",
+    "build": "react-scripts build",
+    "test": "react-scripts test --env=jsdom",
+    "eject": "react-scripts eject"
+  },
+  "author": "complight",
+  "license": "MIT",
+  "dependencies": {
+    "@material-ui/core": "^1.2.0",
+    "axios": "^0.16.2",
+    "react": "^16.4.0",
+    "react-dom": "^16.4.0",
+    "react-redux": "^5.0.6",
+    "react-router-dom": "^4.2.2",
+    "react-scripts": "1.1.4",
+    "react-tap-event-plugin": "^2.0.1",
+    "redux": "^3.7.2",
+    "redux-thunk": "^2.2.0"
+  }
+}
