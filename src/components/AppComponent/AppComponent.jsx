@@ -2,10 +2,8 @@ import React, { Component } from 'react';
 import { connect } from 'react-redux';
 import { bindActionCreators } from 'redux';
 import '../../App.css';
-import TextField from '@material-ui/core/TextField';
-import IconButton from '@material-ui/core/IconButton';
-import SearchIcon from '@material-ui/icons/Search';
-import List from '../List'
+import SearchField from '../SearchField'
+import ResultSearch from '../ResultSearch'
 
 import * as searchActions from '../../shared/actions/index.js';
 
@@ -40,19 +38,12 @@ class AppComponent extends Component {
       <div className="App">
         <header className="App-header">
         </header>
-        <TextField
-          className="search-field"
-          id="query"
-          label="Поиск"
-          value={this.state.query}
-          onChange={this.handleChange('query')}
-          margin="normal"
-          fullWidth={true}
-        />
-        <IconButton onClick={this.onClick}>
-          <SearchIcon/>
-        </IconButton>
-        <List array={result}/>
+          <SearchField
+            value={this.state.query}
+            onChange={this.handleChange('query')}
+            onClick={this.onClick}
+          />
+          <ResultSearch array={result}/>
       </div>
     );
   }
