@@ -3,6 +3,10 @@ import {
   GET_SEARCH_REQUEST,
   GET_SEARCH_FAILURE,
   GET_SEARCH_SUCCESS,
+  GET_CACHE_REQUEST,
+  GET_CACHE_FAILURE,
+  GET_CACHE_SUCCESS,
+  QUERY,
 } from '../constants/searchConstants';
 
 function getSearchSuccess(data) {
@@ -38,5 +42,48 @@ export function getSearch(query) {
       }
       dispatch(getSearchFailure(responseData.statusText));
     }).catch(error => dispatch(getSearchFailure(error)));
+  };
+}
+
+function getCacheSuccess(data) {
+  return {
+    type: GET_CACHE_SUCCESS,
+    payload: data,
+  };
+}
+
+function getCacheRequest() {
+  return {
+    type: GET_CACHE_REQUEST,
+  };
+}
+
+function getCacheFailure(data) {
+  return {
+    type: GET_CACHE_FAILURE,
+    payload: data,
+  };
+}
+
+export function getCache(query) {
+  return (dispatch) => {
+    dispatch(getCacheRequest());
+    const params = query;
+    return api.search.cache(params).then((response) => {
+      const responseData = response.data;
+      if (responseData.status) {
+        const cacheData = responseData.data;
+        dispatch(getCacheSuccess(cacheData));
+        return cacheData;
+      }
+      dispatch(getCacheFailure(responseData.statusText));
+    }).catch(error => dispatch(getCacheFailure(error)));
+  };
+}
+
+export function giveQuery(data) {
+  return {
+    type: QUERY,
+    payload: data,
   };
 }

@@ -1,47 +1,60 @@
 .App {
-  text-align: center;
+    text-align: center;
 }
 
 .App-logo {
-  animation: App-logo-spin infinite 20s linear;
-  height: 80px;
+    animation: App-logo-spin infinite 20s linear;
+    height: 80px;
 }
 
 .App-header {
-  background-color: #2196f3;
-  height: 150px;
-  padding: 20px;
-  color: white;
+    background-color: #2196f3;
+    height: 150px;
+    padding: 20px;
+    color: white;
 }
 
 .App-title {
-  font-size: 1.5em;
+    font-size: 1.5em;
 }
 
 .App-intro {
-  font-size: large;
+    font-size: large;
 }
 
 @keyframes App-logo-spin {
-  from { transform: rotate(0deg); }
-  to { transform: rotate(360deg); }
+    from {
+        transform: rotate(0deg);
+    }
+    to {
+        transform: rotate(360deg);
+    }
 }
 
-.search-field{
-  max-width:50%;
-  display: flex;
-  flex-direction: row;
-  align-items: center;
-  margin: auto;
-}
-.result-search{
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  max-width: 50%;
-  margin: auto;
+.search-field {
+    max-width: 50%;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    margin: auto;
 }
 
-.card-info{
-  max-width: inherit;
+.result-search {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    max-width: 50%;
+    margin: auto;
+}
+
+.card-info {
+    max-width: inherit;
+}
+
+. suggestion {
+    z-index: 1001;
+    display: block;
+    position: absolute;
+    max-width: 50%;
+    margin: auto;
 }
