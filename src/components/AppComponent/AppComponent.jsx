@@ -5,8 +5,9 @@ import '../../App.css';
 import SearchField from '../SearchField';
 import Suggestion from '../Suggestion';
 import ResultSearch from '../ResultSearch';
-import example from '../example.json'
 import * as searchActions from '../../shared/actions/index.js';
+
+import logo from '../../logo.png';
 
 class AppComponent extends Component {
   constructor(props) {
@@ -22,10 +23,12 @@ class AppComponent extends Component {
     let value = event.target.value;
     const { searchActions } = this.props;
     searchActions.giveQuery(value);
-    searchActions.getCache(value);
+    if (value.length % 3 === 0) {
+      searchActions.getCache(value);
+    }
   };
 
-  onClickSuggestion=(value)=>{
+  onClickSuggestion = (value) => {
     const { searchActions } = this.props;
     searchActions.giveQuery(value);
     searchActions.getSearch(value);
@@ -43,11 +46,11 @@ class AppComponent extends Component {
     const { result, cache, query } = this.props;
     console.log('result', result)
     console.log('cache', cache)
-    console.log('example', example.data)
 
     return (
       <div className="App">
         <header className="App-header">
+          <img src={logo} className="App-logo" alt="logo"/>
         </header>
         <SearchField
           value={query}
@@ -55,8 +58,7 @@ class AppComponent extends Component {
           onClick={this.onClick}
         />
         <Suggestion cache={cache} onClick={this.onClickSuggestion}/>
-        {/*<ResultSearch array={result}/>*/}
-        <ResultSearch array={example.data}/>
+        <ResultSearch array={result}/>
       </div>
     );
   }

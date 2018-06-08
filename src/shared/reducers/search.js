@@ -11,7 +11,7 @@ import {
 } from '../constants/searchConstants.js';
 
 const initialState = {
-  result: [],
+  result: undefined,
   cache: [],
   status: '',
   statusText: '',

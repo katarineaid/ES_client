@@ -1,16 +1,15 @@
 .App {
-    text-align: center;
+
 }
 
 .App-logo {
-    animation: App-logo-spin infinite 20s linear;
-    height: 80px;
+    height: 60px;
 }
 
 .App-header {
     background-color: #2196f3;
-    height: 150px;
-    padding: 20px;
+    height: 60px;
+    padding: 5px;
     color: white;
 }
 
@@ -43,12 +42,13 @@
     display: flex;
     flex-direction: column;
     align-items: center;
-    max-width: 50%;
     margin: auto;
+    max-width: 50%;
 }
 
 .card-info {
-    max-width: inherit;
+    max-width: 955px;
+    min-width: 300px;
 }
 
 . suggestion {
@@ -57,4 +57,9 @@
     position: absolute;
     max-width: 50%;
     margin: auto;
+}
+
+.card-head {
+    display: flex;
+    justify-content: space-between;
 }

@@ -32,7 +32,7 @@ function getSearchFailure(data) {
 export function getSearch(query) {
   return (dispatch) => {
     dispatch(getSearchRequest());
-    const params = query;
+    const params = regExp(query);
     return api.search.search(params).then((response) => {
       const responseData = response.data;
       if (responseData.status) {
@@ -68,7 +68,7 @@ function getCacheFailure(data) {
 export function getCache(query) {
   return (dispatch) => {
     dispatch(getCacheRequest());
-    const params = query;
+    const params = regExp(query);
     return api.search.cache(params).then((response) => {
       const responseData = response.data;
       if (responseData.status) {
@@ -86,4 +86,10 @@ export function giveQuery(data) {
     type: QUERY,
     payload: data,
   };
+}
+
+function regExp(query) {
+  let reg = /[&\/\\#,+()$~%.'"*?<>{}№;^!]/g;
+  let cleanQuery = query.replace(reg, '');
+  return cleanQuery.trim();
 }
