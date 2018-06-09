@@ -5,6 +5,7 @@ import '../../App.css';
 import SearchField from '../SearchField';
 import Suggestion from '../Suggestion';
 import ResultSearch from '../ResultSearch';
+import LeftPanel from '../LeftPanel';
 import * as searchActions from '../../shared/actions/index.js';
 
 import logo from '../../logo.png';
@@ -41,6 +42,11 @@ class AppComponent extends Component {
     console.log('press button', query)
   }
 
+  onClickLeftPanel = (value)=>{
+    const { searchActions } = this.props;
+    searchActions.getResultGrouping(value)
+  }
+
 
   render() {
     const { result, cache, query } = this.props;
@@ -52,13 +58,18 @@ class AppComponent extends Component {
         <header className="App-header">
           <img src={logo} className="App-logo" alt="logo"/>
         </header>
-        <SearchField
-          value={query}
-          onChange={this.handleChange('query')}
-          onClick={this.onClick}
-        />
-        <Suggestion cache={cache} onClick={this.onClickSuggestion}/>
-        <ResultSearch array={result}/>
+        <div className="App-body">
+          <LeftPanel onClickLeftPanel={this.onClickLeftPanel}/>
+          <div className="central-panel">
+            <SearchField
+              value={query}
+              onChange={this.handleChange('query')}
+              onClick={this.onClick}
+            />
+            <Suggestion cache={cache} onClick={this.onClickSuggestion}/>
+            <ResultSearch array={result}/>
+          </div>
+        </div>
       </div>
     );
   }

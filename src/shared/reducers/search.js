@@ -8,6 +8,7 @@ import {
   GET_CACHE_FAILURE,
   GET_CACHE_SUCCESS,
   QUERY,
+  GET_RESULT_GROUPING,
 } from '../constants/searchConstants.js';
 
 const initialState = {
@@ -16,10 +17,14 @@ const initialState = {
   status: '',
   statusText: '',
   query: '',
+  grouped:[],
+  searchResult:[],
 };
 export default createReducer(initialState, {
   [GET_SEARCH_SUCCESS]: (state, payload) => Object.assign({}, state, {
-    result: payload,
+    searchResult:payload,
+    result: payload.data,
+    grouped: payload.grouped,
   }),
   [GET_SEARCH_FAILURE]: (state, payload) => Object.assign({}, state, {
     status: payload.status,
@@ -41,5 +46,13 @@ export default createReducer(initialState, {
 
   [QUERY]: (state, payload) => {
     return Object.assign({}, state, { query: payload });
+  },
+  [GET_RESULT_GROUPING]: (state, payload) => {
+    if(state.grouped.hasOwnProperty(payload)){
+      return Object.assign({}, state, { result: state.grouped[payload].data });
+    }else{
+      return Object.assign({}, state, { result: [] });
+    }
+
   },
 })

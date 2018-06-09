@@ -7,3 +7,4 @@ export const GET_CACHE_FAILURE = 'GET_CACHE_FAILURE';
 export const GET_CACHE_SUCCESS = 'GET_CACHE_SUCCESS';
 
 export const QUERY = 'QUERY';
+export const GET_RESULT_GROUPING = 'GET_RESULT_GROUPING';

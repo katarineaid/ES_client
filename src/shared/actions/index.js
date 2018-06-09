@@ -7,6 +7,7 @@ import {
   GET_CACHE_FAILURE,
   GET_CACHE_SUCCESS,
   QUERY,
+  GET_RESULT_GROUPING,
 } from '../constants/searchConstants';
 
 function getSearchSuccess(data) {
@@ -36,7 +37,7 @@ export function getSearch(query) {
     return api.search.search(params).then((response) => {
       const responseData = response.data;
       if (responseData.status) {
-        const searchData = responseData.data;
+        const searchData = responseData;
         dispatch(getSearchSuccess(searchData));
         return searchData;
       }
@@ -92,4 +93,11 @@ function regExp(query) {
   let reg = /[&\/\\#,+()$~%.'"*?<>{}№;^!]/g;
   let cleanQuery = query.replace(reg, '');
   return cleanQuery.trim();
+}
+
+export function getResultGrouping(data) {
+  return{
+    type: GET_RESULT_GROUPING,
+    payload: data,
+  }
 }
