@@ -19,7 +19,7 @@ const styles = theme => ({
     margin: 0,
     left: '20%',
     right: 0,
-    top:'25%'
+    marginTop:'4%'
   },
   list: {
     padding: 2
