@@ -1,0 +1,96 @@
+{
+  "group": [
+    {
+      "id": "Специальный транспорт",
+      "aliasName": "SAC"
+    },
+    {
+      "id": "Кабельные муфты",
+      "aliasName": "Joint"
+    },
+    {
+      "id": "Филиалы и РЭС",
+      "aliasName": "OperationZone"
+    },
+    {
+      "id": "Поселения",
+      "aliasName": "Settlement"
+    },
+    {
+      "id": "Линии электропередачи",
+      "aliasName": "PowerLine"
+    },
+    {
+      "id": "Кабельные сегменты",
+      "aliasName": "CableSegment"
+    },
+    {
+      "id": "Опоры",
+      "aliasName": "Structure"
+    },
+    {
+      "id": "Подстанции (питающие) (Спб)",
+      "aliasName": "Substation"
+    },
+    {
+      "id": "Подстанции (распределительная сеть) (Спб)",
+      "aliasName": "SubstationType"
+    },
+    {
+      "id": "прочие сетевые объекты (Спб)",
+      "aliasName": "SubstationOther"
+    },
+    {
+      "id": "Кабельные линии (Спб)",
+      "aliasName": "PowerLineSPB"
+    },
+    {
+      "id": "Оборудование связи",
+      "aliasName": "ComSwitch"
+    },
+    {
+      "id": "Административные районы",
+      "aliasName": "AdministrativeDistricts"
+    },
+    {
+      "id": "Муниципальные образования",
+      "aliasName": "Municipalities"
+    },
+    {
+      "id": "Кадастровые кварталы",
+      "aliasName": "CadastralQuarters"
+    },
+    {
+      "id": "Границы регионов",
+      "aliasName": "BordersRegions"
+    },
+    {
+      "id": "Лесные хозяйства",
+      "aliasName": "FORESTRY"
+    },
+    {
+      "id": "Здания",
+      "aliasName": "OAS"
+    },
+    {
+      "id": "Магистрали",
+      "aliasName": "Magistral"
+    },
+    {
+      "id": "Улицы",
+      "aliasName": "Streets"
+    },
+    {
+      "id": "Коммутационное оборудование",
+      "aliasName": "Switch"
+    },
+    {
+      "id": "Воздушные сегменты",
+      "aliasName": "AirSegment"
+    },
+    {
+      "id": "Железные дороги",
+      "aliasName": "Railways"
+    }
+  ]
+}

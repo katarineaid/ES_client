@@ -50,6 +50,8 @@ export default createReducer(initialState, {
   [GET_RESULT_GROUPING]: (state, payload) => {
     if(state.grouped.hasOwnProperty(payload)){
       return Object.assign({}, state, { result: state.grouped[payload].data });
+    }else if (payload==='all'){
+      return Object.assign({}, state, { result: state.searchResult.data });
     }else{
       return Object.assign({}, state, { result: [] });
     }
